@@ -1,10 +1,18 @@
 import React from "react";
 
-function Search() {
+function Search({ setSearchTerm }) {
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   return (
     <div className="ui search">
       <div className="ui icon input">
-        <input className="prompt" />
+        <input
+          className="prompt"
+          placeholder="Search by name..."
+          onChange={handleSearchChange}
+        />
         <i className="search icon" />
       </div>
     </div>
